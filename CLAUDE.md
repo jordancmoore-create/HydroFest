@@ -6,6 +6,13 @@ event on the Miramichi River in **Miramichi, New Brunswick**.
 **Event dates: Saturday–Sunday, September 4–5, 2027** (Labour Day weekend — Labour Day
 falls Monday September 6, 2027).
 
+**Venue: Richey Wharf**, Miramichi, NB — confirmed September 2026 from the event poster.
+
+**Naming note:** a second promo poster for the same weekend is branded *"Miramichi East
+Coast Hydroplane Regatta"* rather than HydroFest. The site deliberately stays on
+**Miramichi HydroFest** — that's what the crest artwork and the hydrofest.ca domain say.
+If the event is actually being renamed, the crest has to be re-cut first.
+
 **Domain: hydrofest.ca** — purchased September 2026, hosted on Cloudflare (same account
 as herrinchoker.ca / dreamweaverracing.com / cabot2026.ca).
 
@@ -59,6 +66,26 @@ hero uses a white→cream gradient and the image is `mix-blend-mode: multiply` �
 square disappears into the cream. Don't move the crest onto the dark sections without
 first getting a transparent PNG/SVG version of the artwork.
 
+Recurring devices in the dark half of the page, all defined as CSS custom properties or
+shared classes so they stay consistent:
+
+- `--speedlines` / `--bloom` — a faint diagonal weave plus a red glow from the section's
+  top edge, painted by an `::before` at `inset: 0` on `.countdown-band`, `.features` and
+  `.stay`. Those sections need `position: relative`; they must **not** get
+  `overflow: hidden`, which would silently clip real content instead of the texture.
+- `.eyebrow` + `.section-head h2` — small gold label with a red rule, over an italic
+  condensed uppercase heading.
+- `[data-reveal]` — fade/rise on scroll via `IntersectionObserver`. The hidden state is
+  scoped to `.js [data-reveal]`, and the `js` class is set by an inline script in
+  `<head>`, so the page is never blank without JavaScript. Reduced-motion and
+  IO-less browsers get everything visible immediately.
+- The race-weekend icons are an inline `<symbol>` sprite at the bottom of `index.html`;
+  stroke weight and colour come from `.fi` in the CSS, not from the markup.
+
+**Careful with `.card p` / `.stay p` / `.racecard p`**: those element selectors outrank
+single-class rules like `.card-num` or `.contact`. Scope overrides as `.card .card-num`
+rather than reaching for `!important`.
+
 ---
 
 ## File structure
@@ -89,9 +116,12 @@ Setting `EVENT_DATE = ""` turns the band back into a plain "September 4–5, 202
   rule forwarding it to a real inbox, or the address should be swapped out.
 - **Social links** — the `.social` list in `index.html` is commented out; uncomment and
   fill in the real Facebook/Instagram URLs, and drop the `hidden` attribute.
-- **Race-day start time** — see Countdown above.
-- **Venue, schedule, tickets, viewing areas** — the three cards say "coming soon"
-  on purpose; no specifics have been published yet.
+- **Race-day start time** — see Countdown above. The JSON-LD `SportsEvent` block in
+  `index.html` repeats the same placeholder start and adds a guessed 18:00 Sunday
+  `endDate`; update both together when the schedule lands.
+- **Schedule, tickets, parking, accessibility** — the three cards still say "coming
+  soon" on purpose; no specifics have been published yet. The venue is now known
+  (Richey Wharf) and is stated on the page.
 
 ## Local dev notes (this machine)
 
