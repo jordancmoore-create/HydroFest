@@ -1,0 +1,7 @@
+# Miramichi HydroFest — hydrofest.ca
+# Public event site: everything here is meant to be indexed.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://hydrofest.ca/sitemap.xml
