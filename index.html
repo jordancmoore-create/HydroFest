@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Miramichi HydroFest 2027 — September 4–5, 2027 · Miramichi, NB</title>
+<meta name="description" content="Miramichi HydroFest 2027 — Hydroplane Racing League competition on the Miramichi River, September 4–5, 2027 in Miramichi, New Brunswick. Schedule and ticket news coming soon.">
+<meta name="theme-color" content="#0b0c0f">
+<link rel="canonical" href="https://hydrofest.ca/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Miramichi HydroFest">
+<meta property="og:title" content="Miramichi HydroFest 2027">
+<meta property="og:description" content="Hydroplane racing comes to the Miramichi River — September 4–5, 2027, Miramichi, New Brunswick.">
+<meta property="og:url" content="https://hydrofest.ca/">
+<meta property="og:image" content="https://hydrofest.ca/images/og-hydrofest-2027.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Miramichi HydroFest 2027">
+<meta name="twitter:description" content="Hydroplane racing comes to the Miramichi River — September 4–5, 2027, Miramichi, New Brunswick.">
+<meta name="twitter:image" content="https://hydrofest.ca/images/og-hydrofest-2027.jpg">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="images/hydrofest-2027.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <h1 class="sr-only">Miramichi HydroFest 2027 — September 4–5, 2027, Miramichi, New Brunswick</h1>
+    <img class="crest"
+         src="images/hydrofest-2027.jpg"
+         width="1000" height="1000"
+         alt="Miramichi HydroFest 2027 crest — an HRL hydroplane racing on the Miramichi River beneath the Centennial Bridge"
+         fetchpriority="high">
+    <p class="tagline">Hydroplane racing comes to the Miramichi River</p>
+    <p class="dateline">
+      <span class="dateline-days">Saturday &amp; Sunday</span>
+      <span class="dateline-date">September 4–5, 2027</span>
+    </p>
+    <ul class="pills">
+      <li class="pill">Miramichi, NB</li>
+      <li class="pill">Labour Day weekend</li>
+      <li class="pill">Hydroplane Racing League</li>
+    </ul>
+  </div>
+  <div class="checker" aria-hidden="true"></div>
+</header>
+
+<main>
+
+  <section class="countdown-band">
+    <div class="wrap">
+      <p class="cd-label" id="cd-label">Race weekend begins in</p>
+      <div id="countdown" data-state="tba">
+        <p class="tba">September 4–5, 2027</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="intro">
+    <div class="wrap">
+      <p class="lede">
+        Miramichi HydroFest brings Hydroplane Racing League boats to the Miramichi River
+        for two days of racing on the Labour Day weekend of 2027.
+      </p>
+      <p>
+        We're putting the details together now — venue, race schedule, tickets and
+        everything happening on shore. Check back here, and follow along for news as
+        the event takes shape.
+      </p>
+    </div>
+  </section>
+
+  <section class="cards">
+    <div class="wrap">
+      <ul class="card-grid">
+        <li class="card">
+          <h2>The racing</h2>
+          <p>HRL hydroplanes on the water in Miramichi — classes, entries and the
+             race-weekend schedule will be announced closer to the event.</p>
+        </li>
+        <li class="card">
+          <h2>The venue</h2>
+          <p>Racing on the Miramichi River in Miramichi, New Brunswick. Viewing areas,
+             parking and accessibility details are coming soon.</p>
+        </li>
+        <li class="card">
+          <h2>Get involved</h2>
+          <p>Interested in sponsoring, volunteering or bringing a boat? We'd like to
+             hear from you well ahead of race weekend.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="stay" id="contact">
+    <div class="wrap">
+      <h2>Stay in the loop</h2>
+      <p>Announcements, schedule and ticket news will land here first.</p>
+      <p class="contact">
+        <a class="btn" href="mailto:info@hydrofest.ca">info@hydrofest.ca</a>
+      </p>
+      <!-- Social links: drop the real URLs in and delete the hidden attribute.
+      <ul class="social" hidden>
+        <li><a href="https://facebook.com/YOURPAGE">Facebook</a></li>
+        <li><a href="https://instagram.com/YOURHANDLE">Instagram</a></li>
+      </ul>
+      -->
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="foot-title">Miramichi HydroFest 2027</p>
+    <p class="foot-meta">September 4–5, 2027 · Miramichi, New Brunswick, Canada</p>
+    <p class="foot-meta">Hydroplane Racing League · &copy; <span id="year">2026</span> Miramichi HydroFest</p>
+  </div>
+</footer>
+
+<script>
+  // ---------------------------------------------------------------------------
+  // Countdown target: first day of racing, Saturday September 4 2027.
+  // Atlantic Daylight Time in September is UTC-03:00.
+  // The 09:00 start time is a placeholder — update it once the schedule is set.
+  // Setting EVENT_DATE to "" turns the countdown back into a plain date line.
+  const EVENT_DATE = "2027-09-04T09:00:00-03:00";
+  // ---------------------------------------------------------------------------
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  (function countdown() {
+    const el = document.getElementById("countdown");
+    const label = document.getElementById("cd-label");
+    if (!EVENT_DATE) { label.hidden = true; return; }
+
+    const target = new Date(EVENT_DATE);
+    if (isNaN(target)) { label.hidden = true; return; }  // bad date — keep the date line
+
+    const units = [
+      ["days",    86400000],
+      ["hours",    3600000],
+      ["minutes",    60000],
+      ["seconds",     1000]
+    ];
+
+    function render() {
+      let left = target - new Date();
+      if (left <= 0) {
+        el.dataset.state = "live";
+        label.hidden = true;
+        el.innerHTML = '<p class="tba">Race weekend is here</p>';
+        return;
+      }
+      el.dataset.state = "counting";
+      el.innerHTML = units.map(function (u) {
+        const n = Math.floor(left / u[1]);
+        left -= n * u[1];
+        return '<div class="unit"><span class="num">' + n + '</span>' +
+               '<span class="lbl">' + u[0] + '</span></div>';
+      }).join("");
+      setTimeout(render, 1000);
+    }
+    render();
+  })();
+</script>
+
+</body>
+</html>

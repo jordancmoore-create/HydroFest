@@ -1,0 +1,390 @@
+/* Miramichi HydroFest 2027 — splash page
+   Palette pulled from the event crest: hull red, gold/sand, bridge black. */
+
+:root {
+  --red:        #cf1722;
+  --red-bright: #ff2f2f;
+  --red-deep:   #7d0c13;
+  --gold:       #c9a24a;
+  --gold-lt:    #e6c887;
+  --sand:       #f2e6cf;
+  --ink:        #0b0c0f;
+  --ink-2:      #14161b;
+  --ink-3:      #1d2027;
+  --white:      #f7f5f1;
+  --muted:      #9aa1ac;
+  --border:     rgba(201, 162, 74, 0.22);
+  --wrap:       1060px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--white);
+  font-family: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------------------------------------------------------------- hero ---- */
+/* The crest is a JPEG on a white background, so the hero stays light and the
+   image is multiplied into it — the white square disappears into the cream. */
+
+.hero {
+  position: relative;
+  /* Contain the crest's mix-blend-mode to this section — without it the blend can
+     composite against the dark body background and flash black while scrolling. */
+  isolation: isolate;
+  background:
+    radial-gradient(120% 80% at 50% 0%, #ffffff 0%, #fffdf8 45%, #f4e8d3 100%);
+  padding: 28px 0 0;
+  text-align: center;
+}
+
+.hero-inner {
+  width: 100%;
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 16px 34px;
+}
+
+.crest {
+  display: block;
+  /* Square artwork — clamp against the viewport's short side too, so the hero
+     still fits on a laptop screen without scrolling. */
+  width: max(200px, min(84vw, 58vh, 560px));
+  height: auto;
+  margin: 0 auto;
+  mix-blend-mode: multiply;
+}
+
+.tagline {
+  margin: 4px auto 0;
+  max-width: 26ch;
+  text-wrap: balance;
+  font-family: "Barlow Condensed", "Barlow", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  font-size: clamp(1.4rem, 5.6vw, 2.4rem);
+  line-height: 1.08;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+  color: var(--red-deep);
+}
+
+.dateline {
+  margin: 14px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.dateline-days {
+  font-family: "Barlow Condensed", "Barlow", sans-serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(11, 12, 15, 0.62);
+}
+
+.dateline-date {
+  display: inline-block;
+  padding: 7px 22px 5px;
+  background: var(--red);
+  border-radius: 3px;
+  font-family: "Barlow Condensed", "Barlow", sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.25rem, 4.6vw, 1.7rem);
+  line-height: 1.15;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  box-shadow: 0 2px 0 0 var(--red-deep);
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pill {
+  padding: 5px 15px 4px;
+  border: 1px solid rgba(125, 12, 19, 0.28);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+  font-family: "Barlow Condensed", "Barlow", sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--red-deep);
+}
+
+/* checkered-flag strip, from the HRL shield on the crest */
+.checker {
+  height: 12px;
+  background-image:
+    linear-gradient(45deg, var(--ink) 25%, transparent 25%, transparent 75%, var(--ink) 75%),
+    linear-gradient(45deg, var(--ink) 25%, transparent 25%, transparent 75%, var(--ink) 75%);
+  background-color: var(--sand);
+  background-size: 12px 12px;
+  background-position: 0 0, 6px 6px;
+  border-top: 3px solid var(--red);
+}
+
+/* ----------------------------------------------------------- countdown ---- */
+
+.countdown-band {
+  background: var(--ink-2);
+  border-bottom: 1px solid var(--border);
+  padding: 26px 0 28px;
+  text-align: center;
+}
+
+.cd-label {
+  margin: 0 0 14px;
+  font-family: "Barlow Condensed", "Barlow", sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.cd-label[hidden] { display: none; }
+
+.countdown-band .tba {
+  margin: 0;
+  font-family: "Barlow Condensed", "Barlow", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.05rem, 3.6vw, 1.35rem);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-lt);
+}
+
+#countdown[data-state="counting"] {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.unit {
+  min-width: 0;
+  padding: 10px 4px 8px;
+  background: rgba(207, 23, 34, 0.08);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+.unit .num {
+  display: block;
+  font-family: "Barlow Condensed", "Barlow", sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 8vw, 2.9rem);
+  line-height: 1;
+  color: var(--white);
+  font-variant-numeric: tabular-nums;
+}
+
+.unit .lbl {
+  display: block;
+  margin-top: 3px;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-lt);
+}
+
+@media (min-width: 480px) {
+  .unit .lbl { font-size: 0.72rem; letter-spacing: 0.2em; }
+}
+
+/* --------------------------------------------------------------- intro ---- */
+
+.intro { padding: 52px 0 10px; }
+
+.intro .wrap { max-width: 760px; }
+
+.lede {
+  margin: 0 0 16px;
+  font-size: clamp(1.15rem, 3.6vw, 1.4rem);
+  line-height: 1.5;
+  color: var(--white);
+}
+
+.intro p:not(.lede) {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* --------------------------------------------------------------- cards ---- */
+
+.cards { padding: 44px 0 8px; }
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  padding: 22px 22px 24px;
+  background: var(--ink-2);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--red);
+  border-radius: 4px;
+}
+
+.card h2 {
+  margin: 0 0 8px;
+  font-family: "Barlow Condensed", "Barlow", sans-serif;
+  font-weight: 800;
+  font-size: 1.3rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-lt);
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+/* ----------------------------------------------------------------- CTA ---- */
+
+.stay {
+  margin-top: 52px;
+  padding: 48px 0 52px;
+  background: linear-gradient(180deg, var(--ink-2) 0%, var(--ink) 100%);
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.stay h2 {
+  margin: 0 0 6px;
+  font-family: "Barlow Condensed", "Barlow", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  font-size: clamp(1.7rem, 6vw, 2.3rem);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.stay p { margin: 0; color: var(--muted); }
+
+.contact { margin-top: 22px !important; }
+
+.btn {
+  display: inline-block;
+  padding: 12px 28px 11px;
+  background: var(--red);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 3px;
+  font-family: "Barlow Condensed", "Barlow", sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.btn:hover,
+.btn:focus-visible { background: var(--red-bright); transform: translateY(-1px); }
+
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.social a {
+  color: var(--gold-lt);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(230, 200, 135, 0.35);
+}
+
+.social a:hover { color: var(--white); }
+
+/* -------------------------------------------------------------- footer ---- */
+
+footer {
+  padding: 30px 0 38px;
+  border-top: 3px solid var(--red);
+  background: var(--ink);
+  text-align: center;
+}
+
+.foot-title {
+  margin: 0 0 4px;
+  font-family: "Barlow Condensed", "Barlow", sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.foot-meta {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+:where(a):focus-visible,
+:where(.btn):focus-visible {
+  outline: 2px solid var(--gold-lt);
+  outline-offset: 3px;
+}
+
+/* ---------------------------------------------------------------- wide ---- */
+
+@media (min-width: 720px) {
+  .hero { padding-top: 40px; }
+  .card-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}

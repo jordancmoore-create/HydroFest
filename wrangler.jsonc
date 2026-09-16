@@ -1,0 +1,10 @@
+{
+  // Worker name — must match the name Cloudflare shows when the repo is imported,
+  // or git builds will fail. Also gives the site hydrofest.<account>.workers.dev.
+  "name": "hydrofest",
+  "compatibility_date": "2026-09-16",
+  // Assets-only Worker: no "main" script, just serve the static files in this folder.
+  "assets": {
+    "directory": "./"
+  }
+}

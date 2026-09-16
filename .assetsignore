@@ -1,0 +1,7 @@
+CLAUDE.md
+wrangler.jsonc
+.assetsignore
+.gitignore
+.gitattributes
+.claude/
+images/hydrofest-2027-full.jpg

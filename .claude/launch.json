@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "hydrofest",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "2027"],
+      "port": 2027
+    }
+  ]
+}
