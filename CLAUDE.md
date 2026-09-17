@@ -6,7 +6,7 @@ event on the Miramichi River in **Miramichi, New Brunswick**.
 **Event dates: Saturday–Sunday, September 4–5, 2027** (Labour Day weekend — Labour Day
 falls Monday September 6, 2027).
 
-**Venue: Richey Wharf**, Miramichi, NB — confirmed September 2026 from the event poster.
+**Venue: Ritchie Wharf**, Miramichi, NB — confirmed September 2026 from the event poster.
 
 **Naming note:** a second promo poster for the same weekend is branded *"Miramichi East
 Coast Hydroplane Regatta"* rather than HydroFest. The site deliberately stays on
@@ -121,7 +121,7 @@ Setting `EVENT_DATE = ""` turns the band back into a plain "September 4–5, 202
   `endDate`; update both together when the schedule lands.
 - **Schedule, tickets, parking, accessibility** — the three cards still say "coming
   soon" on purpose; no specifics have been published yet. The venue is now known
-  (Richey Wharf) and is stated on the page.
+  (Ritchie Wharf) and is stated on the page.
 
 ## Local dev notes (this machine)
 
